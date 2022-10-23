@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#submit{
+    background-color: rgb(97, 48, 230);
+    letter-spacing: 1px;
+}
+
+#submit:hover{
+    background-color: rgb(149, 117, 238);
+}
+#submit:active{
+    background-color: rgb(97, 48, 230);
+}
+::-webkit-scrollbar {
+    display: none;
+}
+*{
+    font-family:calibri;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+::selection{
+    background-color: rgb(97, 48, 230);
+    color: white;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width:767px){
+    .from-header{
+        clip-path: circle(500px at 50% calc(100% - 500px));
+    }
+}
+
+.from-header{
+    background-image: url('./assets/backgrounds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.focusing-text{
+    transition: 100ms ease-out;
+}
+.Text-field input[type="date"]{
+    text-transform: uppercase;
+
+}
+::-webkit-calendar-picker-indicator {
+    margin-right: 10px;
+}
+.Text-field > span{
+    display: none;
+
+}
+.Text-field input:invalid ~ span{
+    display: block;
+}
+input[type='radio']{
+    position: relative;
+    outline: none;
+    width: 17px;
+    height: 17px;
+}
+input[type='radio']:after {
+    outline: none;
+    border: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 100%;
+    position: absolute;
+    /* background-color: rgb(148 ,163, 184); */
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid rgb(148 ,163, 184);
+}
+
+input[type='radio']:checked:after {
+    outline: none;
+    border: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 100%;
+    position: absolute;
+    background-color: rgb(97, 48, 230);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 3px solid rgb(247, 247, 247);
+    transition:  100ms ease-in;
+}
+input[type='radio']:checked ~ .rd-lbl{
+    color: black;
+    transition:  100ms ease-in;
+}
+
+
+.form{
+    overflow-y: scroll;
+}
