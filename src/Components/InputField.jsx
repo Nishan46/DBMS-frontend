@@ -1,4 +1,4 @@
-import {React , useState} from 'react'
+import {React , useState , useEffect} from 'react'
 import {useSelector} from 'react-redux'
 import { Languages } from './Languages';
 
@@ -9,21 +9,6 @@ function InputField({lblText , name , id, type ,value, error , pattern}) {
   const genders = ['male','female','other']
   const [date , setDate] = useState(value);
 
-  // useEffect(() => {
-  //   return () => {
-
-  //      window.addEventListener("beforeunload", function(e) {
-  //      let confirmationMessage = "'It looks like you have been editing something. ";
-  //      (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-  //    formRegistered &&   handleSubmit(e)
-  //    console.log(" confirmationMessage", confirmationMessage)
-  //     return confirmationMessage; //Webkit, Safari, Chrome
-    
-  //   });
-  //  }
-   
-  // });
-  
   if (type !== 'gender')
   {
     if(!value){
@@ -34,9 +19,10 @@ function InputField({lblText , name , id, type ,value, error , pattern}) {
               type={type}
               id={id} 
               name={name}
-              onInvalid={(e) => {setIsError(true);}}
+              onInvalid={(e) => {setIsError(true); e.target.setCustomValidity('')}}
               required
               placeholder={lblText}
+              onInput={(e) => {setIsError(false);}}
               pattern={pattern}
               autoCorrect='off'
               spellCheck='false'

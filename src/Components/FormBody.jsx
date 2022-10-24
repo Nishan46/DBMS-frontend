@@ -14,10 +14,10 @@ function FormBody() {
   }
   return (
     <div className='xl:absolute w-full left-[15%] xl:w-[70%] xl:top-[10%] xl:h-[80%] xl:border xl:shadow-2xl xl:rounded-2xl xl:overflow-y-scroll '>
-        <h1 className='text-2xl my-5 mx-auto w-[90%] relative font-bold underline-offset-3 underline'>{Languages[selected_language].register},</h1>
+        <h1 className='text-1xl my-5 mx-auto w-[90%] relative font-bold underline-offset-3 underline'>{Languages[selected_language].register},</h1>
         <div className='w-[90%] flex flex-col grow-0 my-5 mx-auto '>
             <form onSubmit={HandleSubmit}>    
-                {member_data.map(({name , type , id , value , error,patern})=>{
+                {member_data.map(({name , type , id , value , error,patern}) => {
                   return(
                     <div key={`${id} + 32`}>
                       <InputField

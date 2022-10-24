@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 #submit{
     background-color: rgb(97, 48, 230);
     letter-spacing: 1px;
@@ -20,7 +22,9 @@
     font-family:calibri;
     -webkit-user-select: none;
     -ms-user-select: none; 
-    user-select: none; 
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 ::selection{
@@ -34,6 +38,26 @@
         clip-path: circle(500px at 50% calc(100% - 500px));
     }
 }
+
+@keyframes show_msg{
+    0%{scale: 0;}
+    100%{scale: 1;}
+}
+@keyframes hide_msg{
+    0%{scale: 1;}
+    100%{scale: 0}
+}
+
+.display-message{
+    scale: 0;
+    animation: show_msg 300ms 200ms forwards;
+    position: relative;
+    cursor: pointer;
+}
+.display-message * {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 .from-header{
     background-image: url('./assets/backgrounds.jpg');
@@ -105,4 +129,13 @@ input[type='radio']:checked ~ .rd-lbl{
 
 .form{
     overflow-y: scroll;
+}
+
+.clsbtn,
+.clstext{
+    color: rgb(248, 113, 113);
+}
+.clstext:hover,
+.txts:hover > .clsbtn {
+    color: rgb(203, 213, 225);
 }
