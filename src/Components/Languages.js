@@ -3,6 +3,7 @@ const Languages = {
     'English':{
 
         //header Values
+        header_title: 'Mahinda Rajapaksha College\nHomagama.',
         welcome:'Welcome',
         register:'Register',
         //personal values
@@ -41,7 +42,7 @@ const Languages = {
     'සිංහල':{
 
         //header Values
-
+        header_title: 'මහින්ද රාජපක්ෂ විද්‍යාලය\nහෝමාගම.',
         welcome:'සාදරයෙන් පිළිගනිමු',
         register:'ලියාපදිංචි වන්න',
 

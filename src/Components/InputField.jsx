@@ -19,7 +19,7 @@ function InputField({lblText , name , id, type ,value, error , pattern}) {
               type={type}
               id={id} 
               name={name}
-              onInvalid={(e) => {setIsError(true); e.target.setCustomValidity('')}}
+              onInvalid={(e) => {setIsError(true);}}
               required
               placeholder={lblText}
               onInput={(e) => {setIsError(false);}}
@@ -47,6 +47,7 @@ function InputField({lblText , name , id, type ,value, error , pattern}) {
               onChange={(e)=>{setDate(e.target.value)}}
               placeholder={lblText}
               value={date}
+              required
               className='transition-shadow px-2 py-3 outline-none focus:shadow-xl bg-slate-50 border-slate-300 border shadow-sm rounded-md my-1 w-full'/>
               {isError &&
               <span>

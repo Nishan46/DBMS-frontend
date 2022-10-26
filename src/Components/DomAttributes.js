@@ -29,7 +29,7 @@ const member_data =
             id:'birthday',
             error:'Birthday required !',
             type:'date',
-            value:'1999-01-01'
+            value:'yyyy-MM-dd',
         },
         {
             name:'address',

@@ -14,7 +14,7 @@ function FormHeader() {
       <header className='from-header md:w-[90%] w-full mb-0 md:mt-[20px]  md:mx-auto h-[40vh] md:h-[50vh] md:rounded-2xl'>
         <div className=' md:rounded-2xl w-full h-full backdrop-blur-[1px] bg-black/30 md:bg-transparent flex justify-center flex-col items-center'>
           <img src={mrcLogo} className='w-1/5 md:w-[300px] mb-6'/>
-          <h1 className='header-text text-1xl xl:text-4xl text-white text-center font-bold  md:mt-10 xl:mt-30 '>Mahinda Rajapaksha College <br/>Homagama.</h1>
+          <h1 className='header-text text-1xl xl:text-4xl text-white text-center font-bold text-2xl   md:mt-10 xl:mt-30 sinhala-font'>{Languages[selected_language]['header_title']}</h1>
         </div>
       </header>
       <section className='md:h-[calc(50vh-30px)] flex md:justify-center w-full flex-col mb-3 items-center'>
