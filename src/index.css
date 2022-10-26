@@ -18,6 +18,7 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
 *{
     font-family:calibri;
     -webkit-user-select: none;
@@ -158,4 +159,40 @@ input[type='radio']:checked ~ .rd-lbl{
 .clstext:active,
 .txts:active > .clsbtn {
     color: rgb(212, 76, 35);
+}
+
+
+.checkboxcls:checked{
+    @apply border-violet-700;
+}
+.checkboxcls:checked ~ label{
+    @apply text-black;
+}
+
+.checkboxcls:checked ~ .checkboximg{
+    @apply bg-violet-600;
+    
+}
+
+
+
+.checkboxcls:checked ~ .checkboximg{
+    @apply text-opacity-100;
+    transition: ease-in 100ms ;
+    animation: showchecked 100ms forwards;
+}
+input[type='checkbox']:checked ~ p{
+    color: black;
+    transition:  100ms ease-in;
+}
+
+@keyframes showchecked{
+    0%{
+        @apply scale-[0.8];
+        @apply text-opacity-100;
+    }
+    50%{
+        @apply scale-100;
+        @apply text-opacity-100;
+    }
 }
