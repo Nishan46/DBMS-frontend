@@ -10,6 +10,7 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         adelia: ["ADELIA", "cursive"],
         adelia: ["Kanit", "sans-serif"],
+        abhaya:['Abhaya Libre', 'serif'],
       },
     },
   },

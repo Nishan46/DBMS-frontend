@@ -36,7 +36,7 @@ function FormBody() {
                   type='submit'
                   id='submit'
                   className='w-full px-2 py-3 rounded-md shadow-sm text-white font-bold text-md'
-                >REGISTER</button>
+                >{Languages[selected_language]['register']}</button>
             </form>
         </div>
     </div>

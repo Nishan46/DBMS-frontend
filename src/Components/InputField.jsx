@@ -26,7 +26,7 @@ function InputField({lblText , name , id, type ,value, error , pattern}) {
               pattern={pattern}
               autoCorrect='off'
               spellCheck='false'
-              className='transition-shadow px-2 py-3 outline-none focus:shadow-xl bg-slate-50 border-slate-300 border shadow-sm rounded-md my-1 w-full'/>
+              className='transition-shadow px-2 py-3 outline-none focus:shadow-xl bg-slate-50 border-slate-300 border shadow-sm rounded-md normal my-1 w-full'/>
               {isError &&
               <span>
                 <p className=' text-red-600'>{error}</p>
