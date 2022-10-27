@@ -3,6 +3,7 @@ import Categories from '../Components/Categories'
 import FormBody from '../Components/FormBody'
 import FormHeader from '../Components/FormHeader'
 import LOADER from '../Components/LOADER'
+import Photography from '../Components/Photography'
 
 function Form() {
   return (
@@ -14,7 +15,8 @@ function Form() {
 
       </div>
       <div className='md:flex-[0.7] w-full overflow-y-scroll relative '>
-        <FormBody/>
+        {/* <FormBody/> */}
+        <Photography/>
       </div>
     </div>
   )

@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Form/>
-      <DisplayMessage title={Intro.title} message={Intro.message}/>
+      {/* <DisplayMessage title={Intro.title} message={Intro.message}/> */}
     </div>
   )
 }
