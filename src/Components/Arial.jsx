@@ -1,11 +1,11 @@
 import {React} from 'react'
 import InputField from './InputField'
-import {mobile_photography} from '../Components/DomAttributes'
+import {arial_photography} from '../Components/DomAttributes'
 import {Languages} from '../Components/Languages'
 import {useSelector} from 'react-redux'
 import { useForm } from 'react-hook-form'
 
-function MobilePhotography() {
+function Arial() {
 
     const {register , handleSubmit} = useForm()
     const {selected_language} = useSelector((state) => state.languageChanger);
@@ -16,7 +16,7 @@ function MobilePhotography() {
     return (
     <div className='w-[90%] flex flex-col grow-0 my-5 mx-auto '>
         <form onSubmit={handleSubmit(HandleSubmit)}>    
-            {mobile_photography.map(({name , type , id , value , error,patern}) => {
+            {arial_photography.map(({name , type , id , value , error,patern}) => {
                 return(
                 <div key={`${id} + 32`}>
                     <InputField
@@ -42,4 +42,4 @@ function MobilePhotography() {
     )
 }
 
-export default MobilePhotography
+export default Arial

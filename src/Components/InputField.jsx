@@ -3,7 +3,7 @@ import { GiCheckMark } from 'react-icons/gi';
 import {useSelector} from 'react-redux'
 import { Languages } from './Languages';
 
-function InputField({lblText , name , id, type ,value, error , pattern , onChange , registration}) {
+function InputField({lblText , name , id, type ,value, error , pattern , onChange , registration , required}) {
   
   const [isError , setIsError] =  useState(false)
   const {selected_language} = useSelector((state) => state.languageChanger);
@@ -131,6 +131,7 @@ function InputField({lblText , name , id, type ,value, error , pattern , onChang
               onInput={(e) => {setIsError(false);}}
               pattern={pattern}
               autoCorrect='off'
+              required={required}
               spellCheck='false'
               className='transition-shadow px-2 py-3 outline-none focus:shadow-xl bg-slate-50 border-slate-300 border shadow-sm rounded-md normal my-1 w-full'></textarea>
               {isError &&

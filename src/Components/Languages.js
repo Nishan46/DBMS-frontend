@@ -7,6 +7,9 @@ const Languages = {
         welcome:'Welcome',
         register:'Register',
         choose:'Choose',
+        lan_choose:'Choose Language/Languages',
+        soft_choose:'Choose Software/Softwares',
+        web_designing:'Tell us your skills',
 
         //submit attributes
         done:'add',
@@ -50,6 +53,11 @@ const Languages = {
         is_arial_photographer:'Arial Photographer',
         is_mobile_photographer:'Mobile Photographer',
 
+        //videographer
+        is_dslr_mirrorless_videographer:'DSLR / MIRRORLESS Videographer',
+        is_arial_videographer:'Arial Videographer',
+        is_mobile_videographer:'Mobile Videographer',
+
         //First Photagraphy
         type_of_cam:'Types of cameras you have',
         type_of_lense:'Types of lenses you have',
@@ -66,6 +74,32 @@ const Languages = {
         
         //Mobile Photography
         type_of_device:'Types of mobile devices you have',
+
+        //Technical
+        course:'Had you complete a course in this field? tell us !',
+
+        //Announcing & Reporting
+        sinhala_lan:'සිංහල',
+        english_lan:'English',
+        tamil_lan:'தமிழ்',
+
+        //Photo_editing
+        exp_lumina:'Luminar Neo',
+        exp_photoshop:'Adobe Photoshop',
+        exp_illustrator:'Adobe Illustrator',
+        exp_bridge:'Adobe Bridge',
+        other_softwares:'Other Softwares',
+
+        //Video_editing
+        exp_premire:'Adobe Premire Pro',
+        exp_after:'Adobe After Effects',
+        exp_filmora:'WonderShare Filmora',
+
+        //graphic_designing
+        exp_coreldraw:'Corel Draw'
+
+
+
     },
     'සිංහල':{
 
@@ -74,6 +108,9 @@ const Languages = {
         welcome:'සාදරයෙන් පිළිගනිමු',
         register:'ලියාපදිංචි වන්න',
         choose:'තෝරන්න',
+        lan_choose:'භාෂාව/භාෂා තෝරන්න',
+        soft_choose:'මෘදුකාංගය/මෘදුකාංග තෝරන්න',
+        web_designing:'ඔබේ දක්ෂතා අපට කියන්න',
 
         //submit attributes
         done:'එකතු කරන්න',
@@ -116,6 +153,11 @@ const Languages = {
         is_arial_photographer:'ගුවන් ඡායාරූපකරණය',
         is_mobile_photographer:'ජංගම ඡායාරූපකරණය',
 
+        //videographer
+        is_dslr_mirrorless_videographer:'DSLR / MIRRORLESS වීඩියෝකරණය',
+        is_arial_videographer:'ගුවන් වීඩියෝකරණය',
+        is_mobile_videographer:'ජංගම වීඩියෝකරණය',
+
         //First Photagraphy
         type_of_cam:'ඔබ සතුව ඇති කැමරා වර්ග',
         type_of_lense:'ඔබ සතුව ඇති කාච වර්ග',
@@ -133,6 +175,28 @@ const Languages = {
         //Mobile Photography
         type_of_device:'ඔබ සතුව ඇති ජංගම උපාංග වර්ග',
 
+        //Technical
+        course:'ඔබ මෙම ක්ෂේත්රයේ පාඨමාලාවක් සම්පූර්ණ කර තිබේද? අපට කියන්න !',
+
+        //Announcing & Reporting
+        sinhala_lan:'සිංහල',
+        english_lan:'English',
+        tamil_lan:'தமிழ்',
+
+        //Photo_editing
+        exp_lumina:'Luminar Neo',
+        exp_photoshop:'Adobe Photoshop',
+        exp_illustrator:'Adobe Illustrator',
+        exp_bridge:'Adobe Bridge',
+        other_softwares:'වෙනත් මෘදුකාංග',
+
+        //Video_editing
+        exp_premire:'Adobe Premire Pro',
+        exp_after:'Adobe After Effects',
+        exp_filmora:'WonderShare Filmora',
+        
+        //graphic_designing
+        exp_coreldraw:'Corel Draw'
     }
 }
 export {Languages};
