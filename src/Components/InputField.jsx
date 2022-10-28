@@ -50,7 +50,8 @@ function InputField({lblText , name , id, type ,value, error , pattern , onChang
               placeholder={lblText}
               value={date}
               required
-              onChange={onChange}
+              pattern={pattern}
+              onChange={(e)=>{type === 'date' && e.target.value.length > 10 && setDate('yyyy-MM-dd'); setIsError(true);e.target.reportValidity()}}
               className='transition-shadow px-2 py-3 outline-none focus:shadow-xl bg-slate-50 border-slate-300 border shadow-sm rounded-md my-1 w-full'/>
               {isError &&
               <span>

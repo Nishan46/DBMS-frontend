@@ -17,7 +17,7 @@ function LOADER({shows}) {
   },[shows])
 
   return (
-    <div className='loader-container fixed z-10 top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black/90' style={{visibility:`${show}`}}>
+    <div className='loader-container fixed z-30 top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black/90' style={{visibility:`${show}`}}>
         <ColorRing
         visible={true}
         height="120"

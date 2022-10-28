@@ -21,15 +21,16 @@ const member_data =
         {
             name:'full_name',
             id:'Full name',
-            error:'full_name requierd !',
+            error:'Full name requierd !',
             type:'text'
         },
         {
             name:'birthday',
             id:'birthday',
-            error:'Birthday required !',
+            error:'Valid birthday required !',
             type:'date',
             value:'yyyy-MM-dd',
+            
         },
         {
             name:'address',
@@ -42,6 +43,13 @@ const member_data =
             id:'grade',
             error:'Grade required !',
             type:'text'
+        },
+        {
+            name:'admission_id',
+            id:'admission_id',
+            error:'Admission number must have 4 digits',
+            type:'text',
+            patern:'^[0-9]{4}$'
         },
         {
             name:'phone',

@@ -3,20 +3,46 @@ import InputField from './InputField'
 import {member_data} from '../Components/DomAttributes'
 import {Languages} from '../Components/Languages'
 import {useSelector} from 'react-redux'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
+import { useDispatch } from 'react-redux'
+import { setLoad , newAccess } from '../Redux/AssestsSclices'
 
 function FormBody() {
 
+  const dispatch = useDispatch()
+  const Register = async (obj) =>{
+      const api = axios.create({ baseURL:'/api',timeout:2000});
+
+      await api.post('/member-data',obj).then(function (data){
+        dispatch(setLoad(false));
+        if(data.status === 202)
+        {
+          dispatch(newAccess(data.data.token))
+        }
+
+      }).catch(function (error){
+        if(error instanceof AxiosError)
+        {
+          dispatch(setLoad(false));
+          if(error.response.status === 500 )
+          {
+            
+            console.error('Proxy Error !')
+          }
+          else
+          {
+            console.error(error.response.data);
+          }
+        }
+      })
+  }
   const {selected_language} = useSelector((state) => state.languageChanger);
   const HandleSubmit = (e) =>{
     e.preventDefault();
+    dispatch(setLoad(true))
     const data = Object.fromEntries(new FormData(e.target).entries());
-    // console.log(data)
-    const api = axios.create({ baseURL:'/api',timeout:2000});
-    api.post('/member-data',data).then(function (datas){
-      console.log(datas.data);
-    }
-    )
+    Register(data)
+    
   }
   return (
     <div className='xl:absolute w-full left-[15%] xl:w-[70%] xl:top-[10%] xl:h-[80%] xl:border xl:shadow-2xl xl:rounded-2xl xl:overflow-y-scroll '>
@@ -28,7 +54,7 @@ function FormBody() {
                     <div key={`${id} + 32`}>
                       <InputField
                         value={value}
-                        type={type} 
+                        type={type}
                         error={error}
                         lblText={Languages[selected_language][name]}
                         name={name}
