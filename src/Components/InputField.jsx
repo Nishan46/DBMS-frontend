@@ -3,7 +3,7 @@ import { GiCheckMark } from 'react-icons/gi';
 import {useSelector} from 'react-redux'
 import { Languages } from './Languages';
 
-function InputField({lblText , name , id, type ,value, error , pattern , onChange , registration , required}) {
+function InputField({lblText , name , id, type ,value, error , pattern , onChange , required}) {
   
   const [isError , setIsError] =  useState(false)
   const {selected_language} = useSelector((state) => state.languageChanger);
@@ -17,7 +17,6 @@ function InputField({lblText , name , id, type ,value, error , pattern , onChang
         <div className='Text-field mb-2'>
             <label htmlFor={id}>{lblText}</label>
             <input
-              {...registration(name,{required:false})}
               type={type}
               id={id} 
               name={name}
@@ -43,7 +42,6 @@ function InputField({lblText , name , id, type ,value, error , pattern , onChang
         <div className='Text-field mb-2'>
             <label htmlFor={id} className='cursor-pointer'>{lblText}</label>
             <input
-              {...registration(name,{required:false})}
               type={type}
               id={id} 
               name={name}
@@ -72,7 +70,6 @@ function InputField({lblText , name , id, type ,value, error , pattern , onChang
               return(
                 <section className='flex items-center' key={gender}>
                   <input
-                    {...registration(name,{required:false})}
                     name='gender' 
                     id={gender}
                     value={gender}
@@ -105,9 +102,10 @@ function InputField({lblText , name , id, type ,value, error , pattern , onChang
               <section className='flex items-center w-full '>
                   <label htmlFor={id} className='rdlbl cursor-pointer  text-slate-400 flex items-center relative'>
                       <input
-                        {...registration(name,{required:false})} type={type} name={name} id={id}
+                      type={type} 
+                      name={name} 
+                      id={id}
                       onChange={onChange}
-                      // onInput={HandleChange}
                       className='checkboxcls appearance-none absolute w-5 h-5 border rounded-sm border-slate-400'/>
                       <GiCheckMark className='text-white  p-1 absolute text-opacity-0 checkboximg scale-[0.8] w-5 h-5 bg-slate-300 rounded-sm '/>
                   <p className='ml-2 relative left-5 pr-5'>{Languages[selected_language][name]}</p></label>
@@ -122,7 +120,6 @@ function InputField({lblText , name , id, type ,value, error , pattern , onChang
       <div className='Text-field mb-2'>
             <label htmlFor={id}>{lblText}</label>
             <textarea
-              {...registration(name,{required:false})}
               id={id}
               name={name}
               onInvalid={(e) => {setIsError(true); console.log(isError)}}

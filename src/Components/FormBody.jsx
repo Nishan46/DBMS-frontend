@@ -3,14 +3,20 @@ import InputField from './InputField'
 import {member_data} from '../Components/DomAttributes'
 import {Languages} from '../Components/Languages'
 import {useSelector} from 'react-redux'
+import axios from 'axios'
 
 function FormBody() {
 
   const {selected_language} = useSelector((state) => state.languageChanger);
   const HandleSubmit = (e) =>{
     e.preventDefault();
-    const data = new FormData(e.target);
-    console.log(Object.fromEntries(data.entries()))
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    // console.log(data)
+    const api = axios.create({ baseURL:'/api',timeout:2000});
+    api.post('/member-data',data).then(function (datas){
+      console.log(datas.data);
+    }
+    )
   }
   return (
     <div className='xl:absolute w-full left-[15%] xl:w-[70%] xl:top-[10%] xl:h-[80%] xl:border xl:shadow-2xl xl:rounded-2xl xl:overflow-y-scroll '>

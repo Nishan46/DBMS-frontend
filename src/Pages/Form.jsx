@@ -23,8 +23,8 @@ function Form() {
 
       </div>
       <div className='md:flex-[0.7] w-full overflow-y-scroll relative'>
-        {/* <FormBody/> */}
-        <Photography/>
+        <FormBody/>
+        {/* <Photography/> */}
         {/* <Videography/> */}
         {/* <Technical/> */}
         {/* <Announcing/> */}

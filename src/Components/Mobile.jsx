@@ -3,19 +3,26 @@ import InputField from './InputField'
 import {mobile_photography} from './DomAttributes'
 import {Languages} from './Languages'
 import {useSelector} from 'react-redux'
-import { useForm } from 'react-hook-form'
 
 function Mobile() {
 
-    const {register , handleSubmit} = useForm()
     const {selected_language} = useSelector((state) => state.languageChanger);
     const HandleSubmit = (e) =>{
-        console.log(e)
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        for(var items in data)
+        {
+            if(data[items] === 'on')
+            {
+                data[items] = true
+            }
+        }
+        console.log(data)
     }
 
     return (
     <div className='w-[90%] flex flex-col grow-0 my-5 mx-auto '>
-        <form onSubmit={handleSubmit(HandleSubmit)}>    
+        <form onSubmit={HandleSubmit}>    
             {mobile_photography.map(({name , type , id , value , error,patern}) => {
                 return(
                 <div key={`${id} + 32`}>
@@ -26,7 +33,6 @@ function Mobile() {
                     lblText={Languages[selected_language][name]}
                     name={name}
                     pattern={patern}
-                    registration={register}
                     id={id}
                     />
                 </div>
