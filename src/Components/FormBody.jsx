@@ -5,19 +5,19 @@ import {Languages} from '../Components/Languages'
 import {useSelector} from 'react-redux'
 import axios, { AxiosError } from 'axios'
 import { useDispatch } from 'react-redux'
-import { setLoad , newAccess } from '../Redux/AssestsSclices'
+import { setLoad , newAccess , visibleCategories } from '../Redux/AssestsSclices'
 
 function FormBody() {
-
   const dispatch = useDispatch()
   const Register = async (obj) =>{
-      const api = axios.create({ baseURL:'/api',timeout:2000});
+      const api = axios.create({ baseURL:'/api',timeout:20000});
 
       await api.post('/member-data',obj).then(function (data){
         dispatch(setLoad(false));
         if(data.status === 202)
         {
           dispatch(newAccess(data.data.token))
+          dispatch(visibleCategories(true))
         }
 
       }).catch(function (error){

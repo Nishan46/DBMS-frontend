@@ -15,11 +15,11 @@ import WebDeisgning from '../Components/WebDeisgning'
 import { useSelector } from 'react-redux'
 
 function Form() {
-  const {is_load ,access_token} = useSelector((state) => state.Assets_actions);
+  const {is_load , is_categories} = useSelector((state) => state.Assets_actions);
   return (
     <div className='md:flex h-[100vh]'>
       <LOADER shows={is_load}/>
-      {access_token && <Categories token={access_token}/> }
+      {is_categories && <Categories /> }
       <div className="header-bg relative md:flex-[0.3] w-full md:border md:shadow-xl xl:shadow-xl">
         <section className='md:absolute top-0 backdrop-blur-[1px] left-0 right-0 bottom-0 md:bg-black/40'></section>
         <FormHeader/>
