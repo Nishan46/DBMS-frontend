@@ -5,7 +5,9 @@ export const AssestSlices = createSlice({
     initialState:{
         is_load:false,
         access_token:'',
-        is_categories:false
+        is_categories:false,
+        current_category: 'main',
+        photography_fields:{}
     },
     reducers:{
         setLoad: (state,action) =>{
@@ -16,9 +18,15 @@ export const AssestSlices = createSlice({
         },
         visibleCategories:(state , action) =>{
             state.is_categories = action.payload
+        },
+        hasToEdit:(state, action) =>{
+            state.current_category = action.payload
+        },
+        setPhotographyFields:(state,action)=>{
+            state.photography_fields = action.payload
         }
     }
 })
 
-export const {setLoad , newAccess , visibleCategories} = AssestSlices.actions;
+export const {setLoad , newAccess , visibleCategories , hasToEdit , setPhotographyFields} = AssestSlices.actions;
 export default AssestSlices.reducer;

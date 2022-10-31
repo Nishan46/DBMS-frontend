@@ -4,7 +4,7 @@ import { Languages } from './Languages'
 import { useSelector , useDispatch } from 'react-redux';
 import { categories } from './DomAttributes';
 import axios, { AxiosError } from 'axios'
-import { setLoad , newAccess , visibleCategories} from '../Redux/AssestsSclices';
+import { setLoad , newAccess , visibleCategories , hasToEdit} from '../Redux/AssestsSclices';
 import {useForm} from 'react-hook-form'
 
 
@@ -33,6 +33,7 @@ function Categories() {
           console.log(data);
           dispatch(newAccess(data.data.token))
           dispatch(visibleCategories(false))
+          dispatch(hasToEdit(data.data.field))
   
         }).catch(function (error){
           if(error instanceof AxiosError)

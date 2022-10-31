@@ -2,23 +2,46 @@ import {React} from 'react'
 import InputField from './InputField'
 import {mobile_photography} from './DomAttributes'
 import {Languages} from './Languages'
-import {useSelector} from 'react-redux'
-
+import {useSelector , useDispatch} from 'react-redux'
+import { setLoad , newAccess , visibleCategories} from '../Redux/AssestsSclices';
+import axios, { AxiosError } from 'axios'
 function Mobile() {
-
+    const {access_token} = useSelector((state) => state.Assets_actions);
+    const dispatch = useDispatch()
+    
+    const SendMobile = async (obj) =>{
+        const api = axios.create({ baseURL:'/api',timeout:20000});
+        await api.post(`/mobile-data/${access_token}`,obj).then(function (data){
+          dispatch(setLoad(false));
+          console.log(data);
+          dispatch(newAccess(data.data.token))
+          dispatch(visibleCategories(false))
+  
+        }).catch(function (error){
+          if(error instanceof AxiosError)
+          {
+            dispatch(setLoad(false));
+            if(error.response.status === 500 )
+            {
+                dispatch(visibleCategories(false))
+                console.error('Proxy Error !')
+            }
+            else
+            {
+                dispatch(visibleCategories(false))
+                console.error(error.response.data);
+            }
+          }
+        })
+    }
     const {selected_language} = useSelector((state) => state.languageChanger);
     const HandleSubmit = (e) =>{
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.target).entries());
-        for(var items in data)
-        {
-            if(data[items] === 'on')
-            {
-                data[items] = true
-            }
-        }
-        console.log(data)
+        SendMobile(data)
+        dispatch(setLoad(true))
     }
+
 
     return (
     <div className='w-[90%] flex flex-col grow-0 my-5 mx-auto '>
